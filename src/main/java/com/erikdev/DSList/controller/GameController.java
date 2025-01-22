@@ -20,11 +20,15 @@ public class GameController {
         this.gameService = gameService;
     }
 
+
+
+    // buscar um game pelo id
     @GetMapping("/{id}")
     public Game findById(@PathVariable Long id) {
         return gameService.findById(id);
     }
 
+    //buscar todos os games
     @GetMapping
     public List<GameDTO> findAll() {
         List<GameDTO> result = gameService.findAll();

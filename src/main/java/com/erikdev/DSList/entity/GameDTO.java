@@ -1,5 +1,6 @@
 package com.erikdev.DSList.entity;
 
+import com.erikdev.DSList.projections.GameMinProjection;
 import jakarta.persistence.Column;
 
 public class GameDTO {
@@ -16,6 +17,13 @@ public class GameDTO {
         this.title = entity.getTitle();
         this.gameYear = entity.getGameYear();
         this.shortDescription = entity.getShortDescription();
+    }
+
+    public GameDTO(GameMinProjection projection) {
+        this.id = projection.getId();
+        this.title = projection.getTitle();
+        this.gameYear = projection.getGameYear();
+        this.shortDescription = projection.getShortDescription();
     }
 
     public Long getId() {
